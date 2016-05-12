@@ -2,6 +2,8 @@
 <?php
 require_once ("../../config.php");
 
+require_once ("functions.php");
+
 if(isset($_SESSION["user_id"])){
 		//redirect user to the restricted page
 		header("Location: restrict.php");
@@ -33,10 +35,10 @@ if (isset($_POST["login"])){
 		echo "Signing up... ";
 		
 		//the fields are not empty
-		if(!empty($_POST["username"]) && !empty($_POST["password"]) && !empty($_POST["First_Name"]) && !empty($_POST["Last_Name"])   ){
+		if(!empty($_POST["username"]) && !empty($_POST["password"]) && !empty($_POST["Full_Name"])  ){
 			
 			//save to db
-			signup($_POST["username"], $_POST["password"], $_POST["First_Name"], $_POST["Last_Name"]);
+			signup($_POST["username"], $_POST["password"], $_POST["Full_Name"]);
 			
 		}else{
 			echo "Both fields are required! ";
@@ -109,17 +111,17 @@ if (isset($_GET["signup"])){//if there is "?location=" in the message
 			  					  		<h1> Sign Up </h1>
 			  					  	</div>
 			  					  </div>
-					<form class="form-horizontal">
+					<form method="post" class="form-horizontal">
 			  	<div class="form-group">
 			    <label for="username" class="col-sm-2 col-sm-offset-1 control-label">Username</label>
 			    <div class="col-sm-5">
-			      <input type="text" class="form-control" id="username" placeholder="username">
+			      <input type="text" class="form-control" id="username" placeholder="username" name="username">
 			    </div>
 			  </div>
 			  <div class="form-group">
 			    <label for="password" class="col-sm-2 col-sm-offset-1 control-label">Password</label>
 			    <div class="col-sm-5">
-			      <input type="password" class="form-control" id="password" placeholder="password">
+			      <input type="password" class="form-control" id="password" name="password" placeholder="password">
 			    </div>
 			  </div>
 			<form class="form-horizontal">
@@ -131,7 +133,7 @@ if (isset($_GET["signup"])){//if there is "?location=" in the message
 			    </div>
 			      <div class="form-group">
     <div class="col-sm-offset-2 col-sm-5">
-     <button type="submit" class="btn btn-success">Sign up</button>
+     <input type="submit" class="btn btn-success" value="Sign Up" name="signup">
     </div>
   </div>
   </div>
