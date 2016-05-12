@@ -1,6 +1,6 @@
 <?php
 
-	require_once ("../../config.php");
+	require_once ("../config.php");
 
 	//start server session to store data
 	//in every file you want to access session you should require functions
@@ -61,27 +61,27 @@
 			echo $stmt->error;
 		}
 	}
-	function saveUserInterest($interest_id){
+	function AddToDo($todo_id){
 
 		$mysql = new mysqli("localhost", $GLOBALS["db_username"], $GLOBALS["db_password"], "webpr2016_mertyarba");
 
 		//if user already has interests
-		$stmt = $mysql->prepare("SELECT id FROM user_interests WHERE user_id = ? and interests_id = ?");
+		$stmt = $mysql->prepare("SELECT id FROM label WHERE label_id = ? and todo_id = ?");
 		echo $mysql->error;
-		$stmt->bind_param("ii", $_SESSION["user_id"], $interest_id);
+		$stmt->bind_param("ii", $_SESSION["label_id"], $todo_id);
 		$stmt->execute();
 
 		if($stmt->fetch()){
 			//it existed
-			echo "You already have this interest!";
+			echo "You already have this task!";
 			return; //stop it there
 		}
 		$stmt->close();
 
-		$stmt = $mysql->prepare("INSERT INTO user_interests (user_id, interests_id) VALUES (?, ?)");
+		$stmt = $mysql->prepare("INSERT INTO labels (label_id, todo_id) VALUES (?, ?)");
 
 		echo $mysql->error;
-		$stmt->bind_param("ii", $_SESSION["user_id"] ,$interest_id);
+		$stmt->bind_param("ii", $_SESSION["label_id"] ,$todo_id);
 
 		if($stmt->execute()){
 
