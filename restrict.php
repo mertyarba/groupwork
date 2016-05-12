@@ -67,7 +67,7 @@
 	
 </form>
 
-<h2>Interests</h2>
+<h2>ToDos</h2>
 <form>
 	<?php createUserInterestList(); ?>
 	

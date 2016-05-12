@@ -1,6 +1,5 @@
 <?php
 
-	require_once ("../config.php");
 
 	//start server session to store data
 	//in every file you want to access session you should require functions
