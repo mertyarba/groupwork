@@ -115,8 +115,9 @@
 		echo $html;
 
 	}
+
 	function createLabelDropdown(){
-	//query all interests
+		//query all interests
 	  $mysql = new mysqli("localhost", $GLOBALS["db_username"], $GLOBALS["db_password"], "webpr2016_laukoi");
 	  $stmt = $mysql->prepare("SELECT id, name FROM labels ORDER BY name ASC");
 
@@ -159,7 +160,9 @@
 				echo $stmt->error;
 			}
 		}
-		function CreateToDo(){
+	}
+
+	function CreateToDo(){
 			if(isset($_GET["create"])){
 
 				echo "Creating To Do:".$_GET["create"];
@@ -177,43 +180,46 @@
 				}else{
 					echo $stmt->error;
 				}
+
 			}
-		function GetToDos(){
-			$mysql = new mysqli("localhost", $GLOBALS["db_username"], $GLOBALS["db_password"], "webpr2016_mertyarba");
+	}
 
-				$stmt = $mysql->prepare("SELECT id, task FROM todo");
+	function GetToDos(){
+		$mysql = new mysqli("localhost", $GLOBALS["db_username"], $GLOBALS["db_password"], "webpr2016_mertyarba");
 
-				echo $mysql->error;
+			$stmt = $mysql->prepare("SELECT id, task FROM todo");
 
-				//replace the ?
-				$stmt->bind_results($id, $task);
+			echo $mysql->error;
 
-				$stmt->execute();
+			//replace the ?
+			$stmt->bind_results($id, $task);
 
-				$table_html = "";
+			$stmt->execute();
 
-				//add smth to string .=
-				$table_html .= "<table class=table table-'>";
-					$table_html .= "<tr>";
-						$table_html .= "<th>ID</th>";
-						$table_html .= "<th>task</th>";
-					$table_html .= "</tr>";
+			$table_html = "";
 
-				while ($stmt->fetch()){
-					// each row
-					$table_html .= "<tr>"; //start new row
-						$table_html .= "<td>".$id."</td>"; //add columns
-						$table_html .= "<td>".$task."</td>";
+			//add smth to string .=
+			$table_html .= "<table class=table table-'>";
+				$table_html .= "<tr>";
+					$table_html .= "<th>ID</th>";
+					$table_html .= "<th>task</th>";
+				$table_html .= "</tr>";
+
+			while ($stmt->fetch()){
+				// each row
+				$table_html .= "<tr>"; //start new row
+					$table_html .= "<td>".$id."</td>"; //add columns
+					$table_html .= "<td>".$task."</td>";
 
 
-					$table_html .= "</tr>"; //end row
+				$table_html .= "</tr>"; //end row
 
-				}
-				$table_html .= "</table>";
-
-				return $table_html;
-				//GetToDos()
 			}
+			$table_html .= "</table>";
+
+			return $table_html;
+			//GetToDos()
+		}
 
 		 // create todo
 
@@ -221,7 +227,6 @@
 
 		// delete todo
 		// mark done
-
 
 
 	?>
