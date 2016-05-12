@@ -68,15 +68,15 @@ if (isset($_GET["signup"])){//if there is "?location=" in the message
   					  </div>
 
 					  <div class="form-group">
-					    <label for="inputEmail3" class="col-sm-2 col-sm-offset-1 control-label">Username</label>
+					    <label for="username" class="col-sm-2 col-sm-offset-1 control-label">Username</label>
 					    <div class="col-sm-5">
-					      <input type="text" class="form-control" id="inputEmail3" placeholder="username">
+					      <input type="text" class="form-control" id="username" placeholder="username">
 					    </div>
 					  </div>
 					  <div class="form-group">
-					    <label for="inputPassword3" class="col-sm-2 col-sm-offset-1 control-label">Password</label>
+					    <label for="password" class="col-sm-2 col-sm-offset-1 control-label">Password</label>
 					    <div class="col-sm-5">
-					      <input type="password" class="form-control" id="inputPassword3" placeholder="password">
+					      <input type="password" class="form-control" id="password" placeholder="password">
 					    </div>
 					  </div>
 					  <div class="form-group">
@@ -111,20 +111,20 @@ if (isset($_GET["signup"])){//if there is "?location=" in the message
 			  					  </div>
 					<form class="form-horizontal">
 			  	<div class="form-group">
-			    <label for="inputEmail3" class="col-sm-2 col-sm-offset-1 control-label">Username</label>
+			    <label for="username" class="col-sm-2 col-sm-offset-1 control-label">Username</label>
 			    <div class="col-sm-5">
-			      <input type="text" class="form-control" id="inputEmail3" placeholder="username">
+			      <input type="text" class="form-control" id="username" placeholder="username">
 			    </div>
 			  </div>
 			  <div class="form-group">
-			    <label for="inputPassword3" class="col-sm-2 col-sm-offset-1 control-label">Password</label>
+			    <label for="password" class="col-sm-2 col-sm-offset-1 control-label">Password</label>
 			    <div class="col-sm-5">
-			      <input type="password" class="form-control" id="inputPassword3" placeholder="password">
+			      <input type="password" class="form-control" id="password" placeholder="password">
 			    </div>
 			  </div>
 			<form class="form-horizontal">
 				<div class="form-group">
-					<label for="inputName" class="col-sm-2 col-sm-offset-1 control-label">Full Name</label>
+					<label for="Full_Name" class="col-sm-2 col-sm-offset-1 control-label">Full Name</label>
 					<div class="col-sm-5">
 				<input type="text" placeholder="Full Name" name="Full_Name">
 			      </div>
