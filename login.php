@@ -4,6 +4,8 @@ require_once ("../../config.php");
 
 require_once ("functions.php");
 
+
+
 if(isset($_SESSION["user_id"])){
 		//redirect user to the restricted page
 		header("Location: restrict.php");
@@ -58,7 +60,7 @@ if (isset($_GET["signup"])){//if there is "?location=" in the message
 ?>
 
 
-<form class="form-horizontal">
+<form class="form-horizontal" method="post">
   <div class="row">
   		
   		<div class="col-sm-7" >
@@ -92,7 +94,7 @@ if (isset($_GET["signup"])){//if there is "?location=" in the message
 					  </div>
 					  <div class="form-group">
 					    <div class="col-sm-offset-2 col-sm-5">
-					      <button type="submit" class="btn btn-primary" value="Login" name="login">Login</button>
+					      <button type="submit" value="Login" name="login" class="btn btn-primary">Log In</button>
 					    </div>
 					  </div>
 
