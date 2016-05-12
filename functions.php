@@ -226,7 +226,5 @@
 		// get todos
 
 		// delete todo
-		// mark done
 
-
-	?>
+?>
