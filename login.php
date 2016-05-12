@@ -38,62 +38,85 @@ if (isset($_POST["login"])){
 
 
 ?>
-<h1> Log In </h1>
+
 <form class="form-horizontal">
-  <div class="form-group">
-    <label for="inputEmail3" class="col-sm-2 control-label">username</label>
-    <div class="col-sm-5">
-      <input type="text" class="form-control" id="inputEmail3" placeholder="username">
-    </div>
-  </div>
-  <div class="form-group">
-    <label for="inputPassword3" class="col-sm-2 control-label">password</label>
-    <div class="col-sm-5">
-      <input type="password" class="form-control" id="inputPassword3" placeholder="password">
-    </div>
-  </div>
-  <div class="form-group">
-    <div class="col-sm-offset-2 col-sm-5">
-      <div class="checkbox">
-        <label>
-          <input type="checkbox"> Remember me
-        </label>
-      </div>
-    </div>
-  </div>
-  <div class="form-group">
-    <div class="col-sm-offset-2 col-sm-5">
-      <button type="submit" class="btn btn-default">Sign in</button>
-    </div>
-  </div>
+  <div class="row">
+  		
+  		<div class="col-sm-7" >
+
+  					  <div class="row">
+  					  	<div class="col-sm-11 col-sm-offset-1" >
+  					  		<h1> Log In </h1>
+  					  	</div>
+  					  </div>
+
+					  <div class="form-group">
+					    <label for="inputEmail3" class="col-sm-2 col-sm-offset-1 control-label">Username</label>
+					    <div class="col-sm-5">
+					      <input type="text" class="form-control" id="inputEmail3" placeholder="username">
+					    </div>
+					  </div>
+					  <div class="form-group">
+					    <label for="inputPassword3" class="col-sm-2 col-sm-offset-1 control-label">Password</label>
+					    <div class="col-sm-5">
+					      <input type="password" class="form-control" id="inputPassword3" placeholder="password">
+					    </div>
+					  </div>
+					  <div class="form-group">
+					    <div class="col-sm-offset-2 col-sm-5">
+					      <div class="checkbox">
+					        <label>
+					          <input type="checkbox"> Remember me
+					        </label>
+					      </div>
+					    </div>
+					  </div>
+					  <div class="form-group">
+					    <div class="col-sm-offset-2 col-sm-5">
+					      <button type="submit" class="btn btn-primary">Sign in</button>
+					    </div>
+					  </div>
+
+	  </div>
+
+
+   </div>
 </form>
 	
-<h1> Sign Up </h1>
+< <div class="row">
+  		
+  		<div class="col-sm-7" >
 
-	<form class="form-horizontal">
-  <div class="form-group">
-    <label for="inputEmail3" class="col-sm-2 control-label">username</label>
-    <div class="col-sm-5">
-      <input type="text" class="form-control" id="inputEmail3" placeholder="username">
-    </div>
-  </div>
-  <div class="form-group">
-    <label for="inputPassword3" class="col-sm-2 control-label">password</label>
-    <div class="col-sm-5">
-      <input type="password" class="form-control" id="inputPassword3" placeholder="password">
-    </div>
-  </div>
-<form class="form-horizontal">
-	<div class="form-group">
-		<label for="inputName" class="col-sm-2 control-label">Full Name</label>
-		<div class="col-sm-5">
-	<input type="text" placeholder="Full Name" name="Full_Name">
-      </div>
-    </div>
-  </div>
-  <div class="form-group">
+			  					  <div class="row">
+			  					  	<div class="col-sm-11 col-sm-offset-1" >
+			  					  		<h1> Sign Up </h1>
+			  					  	</div>
+			  					  </div>
+					<form class="form-horizontal">
+			  	<div class="form-group">
+			    <label for="inputEmail3" class="col-sm-2 col-sm-offset-1 control-label">Username</label>
+			    <div class="col-sm-5">
+			      <input type="text" class="form-control" id="inputEmail3" placeholder="username">
+			    </div>
+			  </div>
+			  <div class="form-group">
+			    <label for="inputPassword3" class="col-sm-2 col-sm-offset-1 control-label">Password</label>
+			    <div class="col-sm-5">
+			      <input type="password" class="form-control" id="inputPassword3" placeholder="password">
+			    </div>
+			  </div>
+			<form class="form-horizontal">
+				<div class="form-group">
+					<label for="inputName" class="col-sm-2 col-sm-offset-1 control-label">Full Name</label>
+					<div class="col-sm-5">
+				<input type="text" placeholder="Full Name" name="Full_Name">
+			      </div>
+			    </div>
+			      <div class="form-group">
     <div class="col-sm-offset-2 col-sm-5">
-      <button type="submit" class="btn btn-default">Sign up</button>
+     <button type="submit" class="btn btn-success">Sign up</button>
     </div>
   </div>
+  </div>
+
 </form>
