@@ -49,7 +49,7 @@
 		//GLOBALS - access outside variable in function
 		$mysql = new mysqli("localhost", $GLOBALS["db_username"], $GLOBALS["db_password"], "webpr2016_mertyarba");
 
-		$stmt = $mysql->prepare("INSERT INTO users (username, password, name) VALUES (?,?,?)");
+		$stmt = $mysql->prepare("INSERT INTO login (username, password, name) VALUES (?,?,?)");
 
 		echo $mysql->error;
 
@@ -61,7 +61,7 @@
 			echo $stmt->error;
 		}
 	}
-	function AddToDo($todo_id){
+	function AddLabelToTodo($todo_id){
 
 		$mysql = new mysqli("localhost", $GLOBALS["db_username"], $GLOBALS["db_password"], "webpr2016_mertyarba");
 
@@ -73,7 +73,7 @@
 
 		if($stmt->fetch()){
 			//it existed
-			echo "You already have this task!";
+			echo "You already have this label!";
 			return; //stop it there
 		}
 		$stmt->close();
@@ -91,7 +91,7 @@
 		}
 
 	}
-	function createUserInterestList(){
+	function GetToDoLabels(){
 			$mysql = new mysqli("localhost", $GLOBALS["db_username"], $GLOBALS["db_password"], "webpr2016_mertyarba");
 		$stmt = $mysql->prepare("SELECT interest.name FROM user_interests INNER JOIN interest ON user_interests.id = interest.id WHERE user_interests.user_id = ?");
 
@@ -115,5 +115,113 @@
 		echo $html;
 
 	}
+	function createLabelDropdown(){
+	//query all interests
+	  $mysql = new mysqli("localhost", $GLOBALS["db_username"], $GLOBALS["db_password"], "webpr2016_laukoi");
+	  $stmt = $mysql->prepare("SELECT id, name FROM labels ORDER BY name ASC");
+
+	  echo $mysql->error;
+	  $stmt->bind_result($id, $name);
+	  $stmt->execute();
+
+	  //dropdown html
+	  $html ="<select name='user_interest'>";
+
+	  //for each interest
+	  while($stmt->fetch()){
+	    $html .="<option value='".$id."'>".$name."</option>";
+
+
+
+	  }
+
+	  $html .="</select>";
+	  echo $html;
+
+	}
+
+	function DeleteLabel(){
+		if(isset($_GET["delete"])){
+
+			echo "Deleting row with id:".$_GET["delete"];
+
+			// NOW() = current date-time
+			$stmt = $mysql->prepare("UPDATE labels SET deleted=NOW() WHERE id = ?");
+
+			echo $mysql->error;
+
+			//replace the ?
+			$stmt->bind_param("i", $_GET["delete"]);
+
+			if($stmt->execute()){
+				echo "deleted successfully";
+			}else{
+				echo $stmt->error;
+			}
+		}
+		function CreateToDo(){
+			if(isset($_GET["create"])){
+
+				echo "Creating To Do:".$_GET["create"];
+
+				// NOW() = current date-time
+				$stmt = $mysql->prepare("UPDATE labels SET deleted=NOW() WHERE id = ?");
+
+				echo $mysql->error;
+
+				//replace the ?
+				$stmt->bind_param("i", $_GET["create"]);
+
+				if($stmt->execute()){
+					echo "To Do created";
+				}else{
+					echo $stmt->error;
+				}
+			}
+		function GetToDos(){
+			$mysql = new mysqli("localhost", $GLOBALS["db_username"], $GLOBALS["db_password"], "webpr2016_mertyarba");
+
+				$stmt = $mysql->prepare("SELECT id, task FROM todo");
+
+				echo $mysql->error;
+
+				//replace the ?
+				$stmt->bind_results($id, $task);
+
+				$stmt->execute();
+
+				$table_html = "";
+
+				//add smth to string .=
+				$table_html .= "<table class=table table-'>";
+					$table_html .= "<tr>";
+						$table_html .= "<th>ID</th>";
+						$table_html .= "<th>task</th>";
+					$table_html .= "</tr>";
+
+				while ($stmt->fetch()){
+					// each row
+					$table_html .= "<tr>"; //start new row
+						$table_html .= "<td>".$id."</td>"; //add columns
+						$table_html .= "<td>".$task."</td>";
+
+
+					$table_html .= "</tr>"; //end row
+
+				}
+				$table_html .= "</table>";
+
+				return $table_html;
+				//GetToDos()
+			}
+
+		 // create todo
+
+		// get todos
+
+		// delete todo
+		// mark done
+
+
 
 	?>
