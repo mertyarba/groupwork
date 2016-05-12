@@ -1,5 +1,13 @@
 <?php require_once("header.php"); ?>
 <?php
+require_once ("../../config.php");
+
+if(isset($_SESSION["user_id"])){
+		//redirect user to the restricted page
+		header("Location: restrict.php");
+		
+	}
+
 
 if (isset($_POST["login"])){
 		
@@ -18,8 +26,9 @@ if (isset($_POST["login"])){
 			
 		}
 }
+	
 
- else if (isset($_POST["signup"])){
+ if (isset($_POST["signup"])){
 		//sign up
 		echo "Signing up... ";
 		
@@ -36,7 +45,14 @@ if (isset($_POST["login"])){
 		
 	}
 
-
+if (isset($_GET["signup"])){//if there is "?location=" in the message
+		if (empty($_GET["signup"])){//if it is empty
+		echo "Need to enter credentials! <br>";//yes it is empty
+		}else{
+			echo "Location: ".$_GET["location"]."<br>";//no it is not empty
+		}
+	}
+	
 ?>
 
 
