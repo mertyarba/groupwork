@@ -52,7 +52,7 @@
 <br>
 <h1>Welcome <?php echo $_SESSION["name"];?> (<?=$_SESSION["user_id"];?>) </h1>
 
-<h2>Add Interest</h2>
+<h2>Add ToDo</h2>
 <form>
 
 	<input type="text" name="new_interest">
