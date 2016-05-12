@@ -72,13 +72,13 @@ if (isset($_GET["signup"])){//if there is "?location=" in the message
 					  <div class="form-group">
 					    <label for="username" class="col-sm-2 col-sm-offset-1 control-label">Username</label>
 					    <div class="col-sm-5">
-					      <input type="text" class="form-control" id="username" placeholder="username">
+					      <input type="text" class="form-control" id="username" placeholder="username" name="username">
 					    </div>
 					  </div>
 					  <div class="form-group">
 					    <label for="password" class="col-sm-2 col-sm-offset-1 control-label">Password</label>
 					    <div class="col-sm-5">
-					      <input type="password" class="form-control" id="password" placeholder="password">
+					      <input type="password" class="form-control" id="password" name="password" placeholder="password">
 					    </div>
 					  </div>
 					  <div class="form-group">
@@ -92,7 +92,7 @@ if (isset($_GET["signup"])){//if there is "?location=" in the message
 					  </div>
 					  <div class="form-group">
 					    <div class="col-sm-offset-2 col-sm-5">
-					      <button type="submit" class="btn btn-primary">Sign in</button>
+					      <button type="submit" value="Login" name="login" class="btn btn-primary"></button>
 					    </div>
 					  </div>
 
