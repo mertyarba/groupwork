@@ -92,7 +92,7 @@ if (isset($_GET["signup"])){//if there is "?location=" in the message
 					  </div>
 					  <div class="form-group">
 					    <div class="col-sm-offset-2 col-sm-5">
-					      <button type="submit" value="Login" name="login" class="btn btn-primary"></button>
+					      <button type="submit" class="btn btn-primary" value="Login" name="login">Login</button>
 					    </div>
 					  </div>
 
