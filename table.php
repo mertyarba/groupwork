@@ -27,6 +27,7 @@
 			echo $stmt->error;
 		}
 		
+			$stmt->close();
 		
 	}
 
@@ -65,7 +66,7 @@
 			$table_html .= "<td>".$id."</td>"; //add columns
 			$table_html .= "<td>".$task."</td>";
 			$table_html .= "<td>".$deadline."</td>";
-			$table_html .= "<td><a class='btn btn-danger' href='?delete=".$id."'>x</a></td>";
+			$table_html .= "<td><a class='btn btn-danger' href='?deleted=".$id."'>x</a></td>";
 		$table_html .= "</tr>"; //end row
 
 	}
