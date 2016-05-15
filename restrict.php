@@ -43,7 +43,7 @@
 		if (empty($_GET["task"])){//if it is empty
 		echo "Define task! <br>";//yes it is empty
 		}else{
-			echo "Task: ".$_GET["location"]."<br>";//no it is not empty
+			echo "Task: ".$_GET["task"]."<br>";//no it is not empty
 		}
 	}
 	
@@ -65,8 +65,6 @@
 		
 	}
 	
-	//we need functions for dealing with session
-	require_once("functions.php");
 	
 	if(!isset($_SESSION["user_id"])){
 		//redirect not logged in user to the login page
@@ -142,8 +140,8 @@
 		<div class="row">
 			<div class="col-md-3 col-sm-6">
 				<div class="form-group">
-					<label for="tas">Task: </label>
-					<input name="tas" id="task" type="text" class="form-control">
+					<label for="task">Task: </label>
+					<input name="task" id="task" type="text" class="form-control">
 				</div>
 			</div>
 		</div>
@@ -160,8 +158,8 @@
 		
 		<div class="row">
 			<div class="col-md-3 col-sm-6">
-			<input class="btn btn-success hidden-xs btn-md-3" type="submit" value="Create">
-			<input class="btn btn-success visible-xs-inline btn-block" type="submit" value="Create">
+			<button class="btn btn-success hidden-xs btn-md-3" type="submit" value="create" name="create">Create</button>
+			<button class="btn btn-success visible-xs-inline btn-block" type="submit" value="create"  name="create">Create</button>
 		</div>
 		
 		

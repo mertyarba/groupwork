@@ -32,7 +32,7 @@
 
 	
 	//SQL sentence
-	$stmt = $mysql->prepare("SELECT id, task, deadline, completion, deleted FROM todo WHERE deleted IS NULL");
+	$stmt = $mysql->prepare("SELECT id, task, deadline, completion, deleted FROM todo WHERE deleted IS NULL ORDER BY deadline DESC LIMIT 10");
 	//WHERE DELETED IS NULL show only those that are not deleted
 	
 	//if error in sentence
@@ -66,7 +66,7 @@
 			$table_html .= "<td>".$task."</td>";
 			$table_html .= "<td>".$deadline."</td>";
 			$table_html .= "<td><a class='btn btn-danger' href='?delete=".$id."'>x</a></td>";
-		$table_html .= "<tr>"; //end row
+		$table_html .= "</tr>"; //end row
 
 	}
 	$table_html .= "</table>";
