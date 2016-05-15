@@ -1,29 +1,20 @@
-# PHP groupwork project
-**Deadline** examination day - please attend the same day with all group members
+Online ToDo List
+by
+Mert Yarbaoglu
+Pietari Koskinen
+Laura Koivisto
+Kristi Luht
 
-## Instructions
-1. One group member forks this repository and shares with other team members
-2. Make a pull request
-3. Edit the README.md file accordingly
-4. Create web application
+The purpose of this project is to provide the users with a platform where they can keep track of their tasks. The paper and pen method is for grandpas, and you know it.
+So why not do it online where it stays forever? Unless you delete it.
 
-### Requirements
+We differ from other applications like this online with our rule of simplicity. Everything you need is a click away, making the process faster since our target
+audience is people who want fast and direct access to their tasks. Other applications that are similar: Google Tasks, Evernote...
 
-1. **README.md contains:**
-    * name of the project
-    * names of the teammember
-    * purpose of the project (3-4 sentences what problem you are trying to solve);
-    * description of the project (target group – your customers/clients, how you differ from other apps – describe 2-3 similar applications/web services);
-    * functionalities of the app
-        * v0.1 It is possible to create user
-        * v0.2 User can add his/her interests
-        * ...
-    * **summary:** what did you learn? what did fail? what whould you do different next time?
+Functionalities:
+-Users can sign up and log in.
+-Users can add tasks to their to-do lists.
+-Users can delete the tasks individually.
 
-
-2. **Web application/service requirements:**
-    * add separate file where you describe your DB table (you can export them from phpMyAdmin)
-    * You are using atleast 3 tables;
-    * code is separated by files (you have config file, functions file etc.)
-    * application has enough functionalities (you have solved all the issues)
-    * it is possible to see what wach team member has developed 
+Summary: We learnt that when coding typos are unacceptable. You have to have a clear vision of your functions and what you want your app to do.
+We faced problems such as creating the right functions, creating connection to the database, adding the ability to delete items because of typos. Lots of typos.

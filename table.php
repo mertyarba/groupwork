@@ -48,7 +48,7 @@
 	$table_html = "";
 
 	//add something to string
-	$table_html .= "<table class=table table-striped'>";
+	$table_html .= "<table class=table table-bordered'>";
 	$table_html .= "<tr>";
 		$table_html .= "<tr>";
 		$table_html .= "<th>ID</th>";
