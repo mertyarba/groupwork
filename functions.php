@@ -117,7 +117,7 @@
 
 	function createLabelDropdown(){
 		//query all interests
-	  $mysql = new mysqli("localhost", $GLOBALS["db_username"], $GLOBALS["db_password"], "webpr2016_laukoi");
+	  $mysql = new mysqli("localhost", $GLOBALS["db_username"], $GLOBALS["db_password"], "webpr2016_mertyarba");
 	  $stmt = $mysql->prepare("SELECT id, name FROM labels ORDER BY name ASC");
 
 	  echo $mysql->error;
@@ -125,7 +125,7 @@
 	  $stmt->execute();
 
 	  //dropdown html
-	  $html ="<select name='user_interest'>";
+	  $html ="<select name='label_id'>";
 
 	  //for each interest
 	  while($stmt->fetch()){

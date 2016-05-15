@@ -19,23 +19,23 @@
 		header("Location: login.php");
 	}
 	
-	if (isset($_GET["add_new_interest"])){
+	if (isset($_GET["AddLabelToTodo"])){
 		
-		if (!empty($_GET["new_interest"])){
+		if (!empty($_GET["todo_id"])){
 		
-		saveInterest($_GET["new_interest"]);
+		saveTodo($_GET["todo_id"]);
 		
 		}else{
 			
-			echo "You left the interest field empty!";
+			echo "You left the todo field empty!";
 		}	
 	}
 	
-	if (isset($_GET["select_interest"])){
+	if (isset($_GET["select_todo"])){
 		
-		if (!empty($_GET["user_interest"])){
+		if (!empty($_GET["label_id"])){
 		
-		saveUserInterest($_GET["user_interest"]);
+		saveUserInterest($_GET["label_id"]);
 		
 		}else{
 			
@@ -60,9 +60,9 @@
 	
 </form>
 
-<h2>Select User Interest</h2>
+<h2>Select ToDo</h2>
 <form>
-	<?php createInterestDropdown(); ?>
+	<?php createLabelDropdown(); ?>
 	<input type="submit" name="select_interest" value="Select">
 	
 </form>
